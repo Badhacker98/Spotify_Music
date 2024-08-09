@@ -12,7 +12,6 @@ from Spotify_Music.plugins import ALL_MODULES
 from Spotify_Music.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
-from Spotify_Music.plugins.tools.clone import restart_bots
 
 
 
