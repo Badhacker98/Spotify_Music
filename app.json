@@ -1,7 +1,7 @@
 {
-    "name": "⛦ 𝐁𝐫𝐚𝐧𝐝𝐫𝐝 𝐗 𝐌𝐮𝐬𝐢𝐜 ⛦",
+    "name": "⛦ sᴘᴏᴛɪғʏ_ᴍᴜsɪᴄ ⛦",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://te.legra.ph/file/62fa7c81c56c1ae31c844.jpg",
+    "logo": "https://telegra.ph/file/33f45301cc49a11414bb1.jpg",
     "keywords": [
     "python3",
     "telegram",
@@ -38,7 +38,7 @@
         "required": true
       },
       "STRING_SESSION": {
-        "description": "A Pyrogram v2 String Session from @BRANDEDSTRINGSESSION_BOT on Telegram.",
+        "description": "A Pyrogram v2 String Session from  on Telegram.",
         "value": "",
         "required": true
       },
@@ -76,8 +76,8 @@
               "url": "heroku/nodejs"
           },
           {
-              "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+              "url": "https://github.com/badmunda98/heroku-buildpack-ffmpeg-latest1"
           }
       ],
       "stack": "container"
-  }
+}
