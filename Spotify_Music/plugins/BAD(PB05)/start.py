@@ -8,7 +8,7 @@ from youtubesearchpython.__future__ import VideosSearch
 import config
 from Spotify_Music import app
 from Spotify_Music.misc import _boot_
-from Spotify_Music.plugins.BAD(PB05).sudoers import sudoers_list
+from Spotify_Music.plugins.sudoers import sudoers_list
 from Spotify_Music.utils.database import (
     add_served_chat,
     add_served_user,
