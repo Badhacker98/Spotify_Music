@@ -73,8 +73,6 @@ def aq_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(text="⎯꯭̽🇨🇦꯭꯭ ⃪В꯭α꯭∂⎯꯭ ꯭̽🌸", url="https://t.me/ll_BAD_MUNDA_ll"),
-        ],
-        [
             InlineKeyboardButton(
                 text="๏ ᴍᴏʀᴇ ๏",
                 url="https://t.me/PBX_PERMOT",
@@ -113,8 +111,6 @@ def queuemarkup(_, vidid, chat_id):
         ],
         [
             InlineKeyboardButton(text="⎯꯭̽🇨🇦꯭꯭ ⃪В꯭α꯭∂⎯꯭ ꯭̽🌸", url="https://t.me/ll_BAD_MUNDA_ll"),
-        ],
-        [
             InlineKeyboardButton(
                 text="๏ ᴍᴏʀᴇ ๏",
                 url="https://t.me/PBX_PERMOT",
