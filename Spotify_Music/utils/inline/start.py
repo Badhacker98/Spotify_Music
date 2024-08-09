@@ -33,7 +33,8 @@ def private_panel(_):
                     InlineKeyboardButton(text=" ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ ", url=f"https://t.me/{app.username}?startgroup=true",
             )
         ],
-    [
+        [
+            InlineKeyboardButton(text=_["S_B_7"], callback_data="gib_source"),
              InlineKeyboardButton(text=" 🗑️ ", callback_data="close"),
     ],
     ]
