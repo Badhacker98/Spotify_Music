@@ -1,9 +1,9 @@
 from pyrogram import filters
 
-from BrandrdXMusic import YouTube, app
-from BrandrdXMusic.utils.channelplay import get_channeplayCB
-from BrandrdXMusic.utils.decorators.language import languageCB
-from BrandrdXMusic.utils.stream.stream import stream
+from Spotify_Music import YouTube, app
+from Spotify_Music.utils.channelplay import get_channeplayCB
+from Spotify_Music.utils.decorators.language import languageCB
+from Spotify_Music.utils.stream.stream import stream
 from config import BANNED_USERS
 
 
