@@ -2,8 +2,8 @@ import math
 
 from pyrogram.types import InlineKeyboardButton
 
-from BADMUSIC.utils.formatters import time_to_seconds
-from BADMUSIC import app
+from Spotify_Music.utils.formatters import time_to_seconds
+from Spotify_Music import app
 
 def track_markup(_, videoid, user_id, channel, fplay):
     buttons = [
