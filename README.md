@@ -8,7 +8,7 @@
 
 
 <p align="center">
-  <img src="https://telegra.ph/file/41fb87a04991c7de081c3.jpg">
+  <img src="https://telegra.ph/file/35e9b4a3dd30582a3d52e.jpg">
 </p>
 
 
