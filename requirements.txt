@@ -54,7 +54,7 @@ yt-dlp @ git+https://github.com/Badmunda98/yt-dp-fork
 lexica-api==1.4.7
 httpx==0.25.2
 gpytranslate
-openai==0.28.0
+openai==1.40.5
 mpv
 moviepy
 lyricsgenius
