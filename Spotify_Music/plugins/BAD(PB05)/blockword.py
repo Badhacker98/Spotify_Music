@@ -1,6 +1,7 @@
 import re
 import asyncio
 from pyrogram import Client, filters
+from Spotify_Music import app
 
 NOT_WORDS = [
     "mc",
