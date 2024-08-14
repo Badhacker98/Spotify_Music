@@ -4,7 +4,7 @@ from Spotify_Music.utils.database import get_assistant
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from Spotify_Music import YouTube, app
-from Spotify_Music.core.call import PBX
+from Spotify_Music.core.call import Spotify
 from Spotify_Music.misc import SUDOERS, db
 from Spotify_Music.utils.database import (
     get_active_chats,
@@ -155,7 +155,7 @@ def stream_markup(_, videoid, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"PBX_playlist {videoid}"
+                text="✚ ᴘʟᴀʏʟɪsᴛ", callback_data=f"Spotify_playlist {videoid}"
             ),
             InlineKeyboardButton(
                 text="ᴄᴏɴᴛʀᴏʟs ♻",
@@ -186,11 +186,11 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"PBXPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"SpotifyPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"PBXPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"SpotifyPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
         [
@@ -778,7 +778,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_1"], show_alert=True)
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await PBX.pause_stream(chat_id)
+        await Spotify.pause_stream(chat_id)
         buttons = [
             [
                 InlineKeyboardButton(
@@ -797,7 +797,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_3"], show_alert=True)
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await PBX.resume_stream(chat_id)
+        await Spotify.resume_stream(chat_id)
         buttons_resume = [
             [
                 InlineKeyboardButton(
@@ -821,7 +821,7 @@ async def del_back_playlist(client, CallbackQuery, _):
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await PBX.stop_stream(chat_id)
+        await Spotify.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.reply_text(
             _["admin_5"].format(mention), reply_markup=close_markup(_)
@@ -832,14 +832,14 @@ async def del_back_playlist(client, CallbackQuery, _):
             return await CallbackQuery.answer(_["admin_45"], show_alert=True)
         await CallbackQuery.answer()
         await mute_on(chat_id)
-        await PBX.mute_stream(chat_id)
+        await Spotify.mute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_46"].format(mention))
     elif command == "Unmute":
         if not await is_muted(chat_id):
             return await CallbackQuery.answer(_["admin_47"], show_alert=True)
         await CallbackQuery.answer()
         await mute_off(chat_id)
-        await PBX.unmute_stream(chat_id)
+        await Spotify.unmute_stream(chat_id)
         await CallbackQuery.message.reply_text(_["admin_48"].format(mention))
     elif command == "Loop":
         await CallbackQuery.answer()
@@ -881,7 +881,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         reply_markup=close_markup(_),
                     )
                     try:
-                        return await PBX.stop_stream(chat_id)
+                        return await Spotify.stop_stream(chat_id)
                     except:
                         return
             except:
@@ -895,7 +895,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         ),
                         reply_markup=close_markup(_),
                     )
-                    return await PBX.stop_stream(chat_id)
+                    return await Spotify.stop_stream(chat_id)
                 except:
                     return
         else:
@@ -927,7 +927,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await PBX.skip_stream(chat_id, link, video=status, image=image)
+                await Spotify.skip_stream(chat_id, link, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup2(_, chat_id)
@@ -963,7 +963,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             except:
                 image = None
             try:
-                await PBX.skip_stream(chat_id, file_path, video=status, image=image)
+                await Spotify.skip_stream(chat_id, file_path, video=status, image=image)
             except:
                 return await mystic.edit_text(_["call_6"])
             button = stream_markup(_, videoid, chat_id)
@@ -984,7 +984,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await PBX.skip_stream(chat_id, videoid, video=status)
+                await Spotify.skip_stream(chat_id, videoid, video=status)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             button = stream_markup2(_, chat_id)
@@ -1007,7 +1007,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                 except:
                     image = None
             try:
-                await PBX.skip_stream(chat_id, queued, video=status, image=image)
+                await Spotify.skip_stream(chat_id, queued, video=status, image=image)
             except:
                 return await CallbackQuery.message.reply_text(_["call_6"])
             if videoid == "telegram":
@@ -1096,7 +1096,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             if n == 0:
                 return await mystic.edit_text(_["admin_22"])
         try:
-            await PBX.seek_stream(
+            await Spotify.seek_stream(
                 chat_id,
                 file_path,
                 seconds_to_min(to_seek),
@@ -1200,4 +1200,3 @@ async def markup_timer():
 
 
 asyncio.create_task(markup_timer())
-                        
