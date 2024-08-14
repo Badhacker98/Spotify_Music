@@ -26,6 +26,5 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
-YTB = YTM()
 
 APP = "Gaana_MusicBot"  # connect music api key "Dont change it"
