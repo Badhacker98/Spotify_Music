@@ -9,7 +9,7 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 from Spotify_Music.utils.database import get_assistant
 import config
-from Spotify_Music import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app, YTB
+from Spotify_Music import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from Spotify_Music.core.call import Spotify
 from Spotify_Music.misc import SUDOERS
 from Spotify_Music.utils import seconds_to_min, time_to_seconds
@@ -128,12 +128,7 @@ async def stream(
                         vidid, mystic, video=status, videoid=True
                     )
                 except:
-                    try:
-                        file_path, direct = await YTB.download(
-                            vidid, mystic, video=status, videoid=True
-                        )
-                    except:
-                        await mystic.edit_text(_["play_3"])
+                    await mystic.edit_text(_["play_3"])
                 await Spotify.join_call(
                     chat_id,
                     original_chat_id,
@@ -198,12 +193,7 @@ async def stream(
                 vidid, mystic, videoid=True, video=status
             )
         except:
-            try:
-                file_path, direct = await YTB.download(
-                    vidid, mystic, videoid=True, video=status
-                )
-            except:
-                await mystic.edit_text(_["play_3"])
+            await mystic.edit_text(_["play_3"])
         if await is_active_chat(chat_id):
             await put_queue(
                 chat_id,
