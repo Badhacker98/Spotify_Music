@@ -1,6 +1,6 @@
 # Netscape HTTP Cookie File
 # This is a generated file! Do not edit.
-# cookies code @ll_BAD_MUNDA_ll Don't dlt this line.
+# cookies code @ll_BAD_MUNDA_ll Don't cut this line.
 
 # domain  include_subdomains  path  secure  expiration_date  name  value
 .youtube.com	TRUE	/	TRUE	1755081301	__Secure-1PSIDCC	AKEyXzWnN2YQ0_PWGBmMjxqrsoaekT_2ni7t5Wq5Whr5OoQfo_SKV4q9sYQV4uhRAl_OXUUehg
