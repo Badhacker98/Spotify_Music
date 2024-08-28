@@ -1,7 +1,7 @@
 import asyncio
 
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
 from Spotify_Music import YouTube, app
 from Spotify_Music.core.call import Spotify
