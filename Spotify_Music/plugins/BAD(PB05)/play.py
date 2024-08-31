@@ -9,6 +9,7 @@ import config
 from Spotify_Music import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
 from Spotify_Music.core.call import Spotify
 from Spotify_Music.utils import seconds_to_min, time_to_seconds
+from Spotify_Music.utils.database import is_served_user
 from Spotify_Music.utils.channelplay import get_channeplayCB
 from Spotify_Music.utils.decorators.language import languageCB
 from Spotify_Music.utils.decorators.play import PlayWrapper
