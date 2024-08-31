@@ -54,14 +54,14 @@ async def play_commnd(
     url,
     fplay,
 ):
-       if not await is_served_user(message.from_user.id):
+    if not await is_served_user(message.from_user.id):
         await message.reply_text(
-            text="ᴇʀʀᴏʀ, ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀ ᴠᴇʀɪғɪᴇᴅ ᴜsᴇʀ ❌\ɴᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴠᴇʀɪғʏ ʏᴏᴜʀsᴇʟғ💫 .",
+            text="Error, You're Not A Verified User ❌\nPlease Click On The Below Button To Verify Yourself .",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="ᴄʟɪᴄᴋ ғᴏʀ ᴘʟᴀʏ ᴏʀ ᴠᴇʀɪғʏ ʜᴇʀᴇ ✅",
+                            text="Click For Play Or Verify Here",
                             url=f"https://t.me/{app.username}?start=verify",
                         )
                     ]
