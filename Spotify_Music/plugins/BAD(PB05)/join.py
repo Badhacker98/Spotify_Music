@@ -5,7 +5,7 @@ from Spotify_Music import app
 
 #--------------------------
 
-MUST_JOIN = "ll_THE_BAD_BOT_ll"
+MUST_JOIN = "PBX_CHAT"
 #------------------------
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
@@ -26,8 +26,12 @@ async def must_join_channel(app: Client, msg: Message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("๏Jᴏɪɴ๏", url=link),
-                            ]
+                                InlineKeyboardButton("๏Jᴏɪɴ¹๏", url=f"https://t.me/punjabii_chatting_group"),
+                            ],
+                            [
+                            InlineKeyboardButton("๏Jᴏɪɴ²๏", url=link),
+                            ],
+                            
                         ]
                     )
                 )
