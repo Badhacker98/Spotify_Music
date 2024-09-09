@@ -49,6 +49,6 @@ git+https://github.com/badmunda98/yt-dp-fork
 lexica-api==1.4.7
 httpx
 gpytranslate
-openai==0.28.0
+openai==1.44.1
 mpv
 lyricsgenius
