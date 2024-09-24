@@ -7,7 +7,7 @@ import requests
 import urllib3
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyromod.exceptions import *
+from pyromod.exceptions import ListenerTimeout
 
 from Spotify_Music import app
 from Spotify_Music.misc import SUDOERS
