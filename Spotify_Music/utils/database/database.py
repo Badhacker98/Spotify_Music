@@ -73,9 +73,9 @@ async def set_queries(mode: int):
     )
 
 
-# Top Chats DB
-
-
+async def is_commanddelete_on(chat_id: int) -> bool:
+    return chat_id not in command
+    
 async def get_top_chats() -> dict:
     results = {}
     async for chat in chattopdb.find({"chat_id": {"$lt": 0}}):
