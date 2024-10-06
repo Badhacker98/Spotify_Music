@@ -6,7 +6,7 @@ bard
 aiohttp==3.9.3
 asyncio==3.4.3
 pytube
-dnspython==2.3.0
+dnspython==2.7.0
 ffmpeg-python
 gitpython
 hachoir
