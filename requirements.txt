@@ -3,7 +3,7 @@ telethon==1.33.1
 aiofiles
 apscheduler
 bard
-aiohttp==3.9.3
+aiohttp==3.10.10
 asyncio==3.4.3
 pytube
 dnspython==2.3.0
