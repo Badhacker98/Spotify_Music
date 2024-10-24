@@ -28,8 +28,8 @@
 <a href="https://t.me/ll_BAD_MUNDA_ll"><img src="https://img.shields.io/badge/DM%20TO%20BADMUNDA-blueviolet?style=for-the-badge&logo=appveyor" width="200""/></a>
 
 # 𝗗𝗘𝗣𝗟𝗢𝗬 𝗢𝗡 𝗛𝗘𝗥𝗢𝗞𝗨
-<p href="https://github.com/Badhacker98/BADMUSIC/fork"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-greenviolet?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
-
+<p>
+<a href="https://github.com/Badhacker98/BADMUSIC/fork"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-greenviolet?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 ---
 # HOST ON VPS 
 
