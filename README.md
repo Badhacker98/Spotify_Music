@@ -85,7 +85,7 @@ curl -fssL https://deb.nodesource.com/setup_18.x | sudo -E bash - && sudo apt-ge
 
 11.
 ```
-git clone https://github.com/Badhacker98/Spotify_Music && cd Spotify_Music
+git clone https://github.com/Badhacker98/BADMUSIC && cd BADMUSIC
 ```
 
 12.
