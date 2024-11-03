@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 import config
 from config import BANNED_USERS
 from Spotify_Music import HELPABLE, LOGGER, app, userbot
-from Spotify_Music.core.call import Yukki
+from Spotify_Music.core.call import Spotify
 from Spotify_Music.plugins import ALL_MODULES
 from Spotify_Music.utils.database import get_banned_users, get_gbanned
 
@@ -39,10 +39,10 @@ async def init():
                 HELPABLE[imported_module.__MODULE__.lower()] = imported_module
     LOGGER("Spotify_Music.plugins").info("Successfully Imported All Modules ")
     await userbot.start()
-    await Yukki.start()
+    await Spotify.start()
     LOGGER("Spotify_Music").info("Assistant Started Sucessfully")
     try:
-        await Yukki.stream_call(
+        await Spotify.stream_call(
             "https://graph.org/file/e999c40cb700e7c684b75.mp4"
         )
     except NoActiveGroupCall:
@@ -51,7 +51,7 @@ async def init():
         )
         sys.exit()
 
-    await Yukki.decorators()
+    await Spotify.decorators()
     LOGGER("Spotify_Music").info("╔═════ஜ۩۞۩ஜ════╗\n  🌸ᴍᴀᴅᴇ ʙʏᴇ ᴛᴇᴀᴍ ᴘʙx (sᴜᴋʜ) 🌸\n╚═════ஜ۩۞۩ஜ════╝")
     await idle()
     await app.stop()
