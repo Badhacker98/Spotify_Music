@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
-from Spotify_Music import YouTube, app
+from Spotify_Music import Platform, app
 from Spotify_Music.core.call import Spotify
 from Spotify_Music.misc import db
 from Spotify_Music.utils.database import get_loop
