@@ -48,6 +48,7 @@ git+https://github.com/badmunda98/SafoneAPI
 git+https://github.com/badmunda98/BadAPI
 git+https://github.com/badmunda98/yt-dp-fork
 git+https://github.com/usernein/pyromod
+git+https://github.com/THE-VIP-BOY-OP/yt-dlp-youtube-oauth2
 #git+https://github.com/joetats/youtube_search@master
 #git+https://github.com/alexmercerind/youtube-search-python@main
-https://github.com/badmunda98/yt-dlp-youtube-oauth2
+#git+https://github.com/Vivekkumar-IN/yt-dlp-youtube-oauth2
