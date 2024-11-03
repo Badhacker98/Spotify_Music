@@ -1,6 +1,6 @@
 from pyrogram import filters
 
-from Spotify_Music import YouTube, app
+from Spotify_Music import Platform, app
 from Spotify_Music.utils.channelplay import get_channeplayCB
 from Spotify_Music.utils.decorators.language import languageCB
 from Spotify_Music.utils.stream.stream import stream
