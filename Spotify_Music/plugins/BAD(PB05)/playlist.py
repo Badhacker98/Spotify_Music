@@ -12,7 +12,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
 
 from config import BANNED_USERS, SERVER_PLAYLIST_LIMIT
-from Spotify_Music import Carbon, app
+from Spotify_Music import Platform, app
 from Spotify_Music.utils.decorators.language import language, languageCB
 from Spotify_Music.utils.inline.playlist import (
     botplaylist_markup,
