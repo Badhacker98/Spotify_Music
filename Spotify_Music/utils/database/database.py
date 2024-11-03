@@ -8,6 +8,7 @@ authdb = mongodb.adminauth
 authuserdb = mongodb.authuser
 autoenddb = mongodb.autoend
 assdb = mongodb.assistants
+commanddb = mongodb.commands
 blacklist_chatdb = mongodb.blacklistChat
 blockeddb = mongodb.blockedusers
 chatsdb = mongodb.chats
@@ -71,10 +72,6 @@ async def set_queries(mode: int):
     return await queriesdb.update_one(
         {"chat_id": chat_id}, {"$set": {"mode": mode}}, upsert=True
     )
-
-
-async def is_commanddelete_on(chat_id: int) -> bool:
-    return chat_id not in command
     
 async def get_top_chats() -> dict:
     results = {}
@@ -834,6 +831,74 @@ async def set_video_limit(limt: int):
     return await videodb.update_one(
         {"chat_id": chat_id}, {"$set": {"limit": limt}}, upsert=True
     )
+
+
+# Delete command mode
+
+# Define file paths
+CLEANMODE_DB = os.path.join(config.TEMP_DB_FOLDER, "cleanmode.json")
+COMMAND_DB = os.path.join(config.TEMP_DB_FOLDER, "command.json")
+
+
+def load_cleanmode():
+    if os.path.exists(CLEANMODE_DB):
+        with open(CLEANMODE_DB, "r") as file:
+            return json.load(file)
+    return []
+
+
+def load_command():
+    if os.path.exists(COMMAND_DB):
+        with open(COMMAND_DB, "r") as file:
+            return json.load(file)
+    return []
+
+
+def save_cleanmode():
+    with open(CLEANMODE_DB, "w") as file:
+        json.dump(cleanmode, file)
+
+
+def save_command():
+    with open(COMMAND_DB, "w") as file:
+        json.dump(command, file)
+
+
+cleanmode = load_cleanmode()
+command = load_command()
+
+
+async def is_cleanmode_on(chat_id: int) -> bool:
+    return chat_id not in cleanmode
+
+
+async def cleanmode_off(chat_id: int):
+    if chat_id not in cleanmode:
+        cleanmode.append(chat_id)
+        save_cleanmode()
+
+
+async def cleanmode_on(chat_id: int):
+    if chat_id in cleanmode:
+        cleanmode.remove(chat_id)
+        save_cleanmode()
+
+
+async def is_commanddelete_on(chat_id: int) -> bool:
+    return chat_id not in command
+
+
+async def commanddelete_off(chat_id: int):
+    if chat_id not in command:
+        command.append(chat_id)
+        save_command()
+
+
+async def commanddelete_on(chat_id: int):
+    if chat_id in command:
+        command.remove(chat_id)
+        save_command()
+
 
 # Private Served Chats
 
