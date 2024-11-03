@@ -23,7 +23,6 @@ future==0.18.3
 search_engine_parser
 py-tgcalls==1.2.9
 ntgcalls==1.1.2
-pyrogram==2.3.48
 pykeyboard
 pyshorteners
 pyrofork 
@@ -48,6 +47,7 @@ git+https://github.com/badmunda98/SafoneAPI
 git+https://github.com/badmunda98/BadAPI
 git+https://github.com/badmunda98/yt-dp-fork
 git+https://github.com/usernein/pyromod
+git+https://github.com/KurimuzonAkuma/pyrogram@dev
 git+https://github.com/THE-VIP-BOY-OP/yt-dlp-youtube-oauth2
 #git+https://github.com/joetats/youtube_search@master
 #git+https://github.com/alexmercerind/youtube-search-python@main
