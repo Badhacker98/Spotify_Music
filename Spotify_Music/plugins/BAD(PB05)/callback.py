@@ -3,7 +3,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
-from Spotify_Music import YouTube, app
+from Spotify_Music import Platform, app, userbot
 from Spotify_Music.core.call import Spotify
 from Spotify_Music.misc import SUDOERS, db
 from Spotify_Music.utils.database import (
