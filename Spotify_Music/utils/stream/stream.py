@@ -16,7 +16,7 @@ from Spotify_Music.utils.database import (
 from Spotify_Music.utils.exceptions import AssistantErr
 from Spotify_Music.utils.inline.play import stream_markup, telegram_markup
 from Spotify_Music.utils.inline.playlist import close_markup
-from Spotify_Music.utils.pastebin import Spotifybin
+from Spotify_Music.utils.pastebin import SpotifyBin
 from Spotify_Music.utils.stream.queue import put_queue, put_queue_index
 from Spotify_Music.utils.thumbnails import gen_qthumb, gen_thumb
 
