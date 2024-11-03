@@ -1,7 +1,7 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Spotify_Music import YouTube, app
+from Spotify_Music import Platform, app
 from Spotify_Music.core.call import Spotify
 from Spotify_Music.misc import db
 from Spotify_Music.utils import AdminRightsCheck, seconds_to_min
