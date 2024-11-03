@@ -1,16 +1,36 @@
 import os
 from typing import List
+from Spotify_Music.utils.database import get_lang
 
 import yaml
 
 LOGGERS = "Gaana_MusicBot"
 
+
 languages = {}
+commands = {}
+helpers = {}
 languages_present = {}
+
+
+def load_yaml_file(file_path: str) -> dict:
+    with open(file_path, "r", encoding="utf8") as file:
+        return yaml.safe_load(file)
+
+
+def get_command(lang: str = "en") -> Union[str, List[str]]:
+    if lang not in commands:
+        lang = "en"
+    return commands[lang]
 
 
 def get_string(lang: str):
     return languages[lang]
+
+
+def get_helpers(lang: str):
+    return helpers[lang]
+    
 
 # Load English commands first and set English keys
 commands["en"] = load_yaml_file(r"./strings/cmds/en.yml")
