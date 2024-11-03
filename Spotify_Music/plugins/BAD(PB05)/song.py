@@ -16,7 +16,7 @@ from config import (
     SONG_DOWNLOAD_DURATION,
     SONG_DOWNLOAD_DURATION_LIMIT,
 )
-from Spotify_Music import YouTube, app
+from Spotify_Music import Platform, app
 from Spotify_Music.utils.decorators.language import language, languageCB
 from Spotify_Music.utils.formatters import convert_bytes
 from Spotify_Music.utils.inline.song import song_markup
