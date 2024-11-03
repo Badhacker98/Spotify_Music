@@ -6,7 +6,6 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 
 import config
 from config import BANNED_USERS, lyrical
-from strings import command
 from Spotify_Music import app, LOGGER, Platform
 from Spotify_Music.utils import seconds_to_min, time_to_seconds
 from Spotify_Music.utils.database import is_video_allowed
