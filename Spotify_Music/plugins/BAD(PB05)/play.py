@@ -24,9 +24,17 @@ from Spotify_Music.utils.stream.stream import stream
 
 
 @app.on_message(
-    command(
-        "PLAY_COMMAND",
-        prefixes=["/", "!", "%", ",", "@", "#"],
+    filters.command(
+        [
+            "play",
+            "vplay",
+            "cplay",
+            "cvplay",
+            "playforce",
+            "vplayforce",
+            "cplayforce",
+            "cvplayforce",
+        ]
     )
     & filters.group
     & ~BANNED_USERS
