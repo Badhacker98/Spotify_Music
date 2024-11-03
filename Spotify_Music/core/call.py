@@ -20,7 +20,7 @@ from pytgcalls.types import (
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from Spotify_Music import LOGGER, YouTube, app
+from Spotify_Music import LOGGER, Platform, app, userbot
 from Spotify_Music.misc import db
 from Spotify_Music.utils.database import (
     add_active_chat,
