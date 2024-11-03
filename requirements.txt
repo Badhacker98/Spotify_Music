@@ -40,7 +40,7 @@ unidecode
 lexica-api==1.4.7
 httpx
 gpytranslate
-openai==1.51.0
+openai==1.53.0
 mpv
 lyricsgenius
 gtts
