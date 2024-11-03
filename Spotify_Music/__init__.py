@@ -2,29 +2,31 @@ from Spotify_Music.core.bot import Spotify
 from Spotify_Music.core.dir import dirr
 from Spotify_Music.core.git import git
 from Spotify_Music.core.userbot import Userbot
-from Spotify_Music.misc import dbb, heroku
+from Spotify_Music.misc import dbb, heroku, sudo
 
-from SafoneAPI import SafoneAPI
 from .logging import LOGGER
 
+# Directories
 dirr()
+
+# Check Git Updates
 git()
+
+# Initialize Memory DB
 dbb()
+
+# Heroku APP
 heroku()
 
+# Load Sudo Users from DB
+sudo()
+# Bot Client
 app = Spotify()
+
+# Assistant Client
 userbot = Userbot()
-api = SafoneAPI()
 
+from .platforms import PlaTForms
 
-from .platforms import *
-
-Apple = AppleAPI()
-Carbon = CarbonAPI()
-SoundCloud = SoundAPI()
-Spotify = SpotifyAPI()
-Resso = RessoAPI()
-Telegram = TeleAPI()
-YouTube = YouTubeAPI()
-
-APP = "Gaana_MusicBot"  # connect music api key "Dont change it"
+Platform = PlaTForms()
+HELPABLE = {}
