@@ -12,7 +12,7 @@ from Spotify_Music.utils.database import get_banned_users, get_gbanned
 
 
 async def init():
-    if len(config.STRING_SESSIONS) == 0:
+    if len(config.STRING1) == 0:
         LOGGER("Spotify_Music").error(
             "No Assistant Clients Vars Defined!.. Exiting Process."
         )
