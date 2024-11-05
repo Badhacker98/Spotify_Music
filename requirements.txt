@@ -36,7 +36,7 @@ spotipy
 tgcrypto
 telegraph==2.2.0
 unidecode
-lexica-api==1.4.7
+lexica-api==1.6.0
 httpx
 gpytranslate
 openai==1.51.0
