@@ -374,8 +374,8 @@ async def start_message_private(client, message):
                     )
                 ],
                 [
-            InlineKeyboardButton(text="❍ᴡɴᴇꝛ", url="https://t.me/II_BAD_BABY_II")
-            InlineKeyboardButton(text="ᴜᴘᴅᴧᴛᴇ", url="https://t.me/HEROKUBIN_01")
+            InlineKeyboardButton(text="❍ᴡɴᴇꝛ", url="https://t.me/II_BAD_BABY_II"),
+            InlineKeyboardButton(text="ᴜᴘᴅᴧᴛᴇ", url="https://t.me/HEROKUBIN_01"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -404,7 +404,7 @@ async def start_message_private(client, message):
                 LOGGER.info(f"🚫 Start Error: {e}")
                 return
 
-@bot.on_message(cdx("help"]) & pyrofl.private)
+@bot.on_message(cdx(["help"]) & pyrofl.private)
 async def start_message_private(client, message):
     user_id = message.from_user.id
     mention = message.from_user.mention
@@ -482,7 +482,7 @@ async def open_command_list_alert(client, query):
 @bot.on_callback_query(rgx("back_to_home"))
 async def back_to_home_menu(client, query):
     mention = query.from_user.mention
-        caption = f"""➻ нᴇʏ</b>, {mention} ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ !
+    caption = f"""➻ нᴇʏ</b>, {mention} ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ !
 
 🥀 ɪ ᴀᴍ ᴍᴜꜱɪꜱɪᴄ ʙᴏᴛ.
 
