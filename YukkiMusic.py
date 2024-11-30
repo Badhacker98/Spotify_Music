@@ -494,13 +494,13 @@ async def back_to_home_menu(client, query):
         [
             [
                 InlineKeyboardButton(
-                    text="🥀 ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ ✨",
+                    text="❖ ᴛᴧᴘ тᴏ sᴇᴇ ᴍᴧɢɪᴄ ❖",
                     url=f"https://t.me/{bot.me.username}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="🌺 ᴄᴏᴍᴍᴀɴᴅꜱ 🌷",
+                    text="ꃅᴏᴡ ᴛᴏ ᴜꜱᴇ ❖",
                     callback_data="open_command_list",
                 )
             ],
