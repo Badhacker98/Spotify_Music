@@ -346,7 +346,7 @@ async def add_served_user(user_id: int):
 # Callback & Message Queries
 
 
-@bot.on_message(cdx(["start", "help"]) & pyrofl.private)
+@bot.on_message(cdx(["start"]) & pyrofl.private)
 async def start_message_private(client, message):
     user_id = message.from_user.id
     mention = message.from_user.mention
@@ -404,7 +404,48 @@ async def start_message_private(client, message):
                 LOGGER.info(f"🚫 Start Error: {e}")
                 return
 
+@bot.on_message(cdx("help"]) & pyrofl.private)
+async def start_message_private(client, message):
+    user_id = message.from_user.id
+    mention = message.from_user.mention
+    await add_served_user(user_id)
+    if len(message.text.split()) > 1:
+        name = message.text.split(None, 1)[1]
+        if name[0:5] == "verify":
+            pass
+            
+    else:
+        caption = f"""➻ ʜᴇʟʟᴏ, {mention}
 
+ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs ᴄᴀɴ ʙᴇ ᴜsᴇᴅ ᴡɪᴛʜ ➥."""
+        buttons = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        text="ꃅᴏᴡ ᴛᴏ ᴜꜱᴇ ❖",
+                        callback_data="open_command_list",
+                    )
+                ],
+            ]
+        )
+        if START_IMAGE_URL:
+            try:
+                return await message.reply_photo(
+                    photo=START_IMAGE_URL, caption=caption, reply_markup=buttons
+                )
+            except Exception as e:
+                LOGGER.info(f"🚫 Start Image Error: {e}")
+                try:
+                    return await message.reply_text(text=caption, reply_markup=buttons)
+                except Exception as e:
+                    LOGGER.info(f"🚫 Start Error: {e}")
+                    return
+        else:
+            try:
+                return await message.reply_text(text=caption, reply_markup=buttons)
+            except Exception as e:
+                LOGGER.info(f"🚫 Start Error: {e}")
+                return
 
 
 @bot.on_callback_query(rgx("open_command_list"))
