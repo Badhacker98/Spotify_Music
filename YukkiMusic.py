@@ -374,9 +374,9 @@ async def start_message_private(client, message):
                     )
                 ],
                 [
-            InlineKeyboardButton(text="❍ᴡɴᴇꝛ", user_id=config.OWNER_ID),
-            InlineKeyboardButton(text="ᴜᴘᴅᴧᴛᴇ", url=config.SUPPORT_CHAT),
-        ],
+            InlineKeyboardButton(text="❍ᴡɴᴇꝛ", url="https://t.me/II_BAD_BABY_II")
+            InlineKeyboardButton(text="ᴜᴘᴅᴧᴛᴇ", url="https://t.me/HEROKUBIN_01")
+                ],
                 [
                     InlineKeyboardButton(
                         text="ꃅᴏᴡ ᴛᴏ ᴜꜱᴇ ❖",
