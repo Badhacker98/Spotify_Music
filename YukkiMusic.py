@@ -369,13 +369,17 @@ async def start_message_private(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🥀 ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ ✨",
+                        text="❖ ᴛᴧᴘ тᴏ sᴇᴇ ᴍᴧɢɪᴄ ❖",
                         url=f"https://t.me/{bot.me.username}?startgroup=true",
                     )
                 ],
                 [
+            InlineKeyboardButton(text="❍ᴡɴᴇꝛ", user_id=config.OWNER_ID),
+            InlineKeyboardButton(text="ᴜᴘᴅᴧᴛᴇ", url=config.SUPPORT_CHAT),
+        ],
+                [
                     InlineKeyboardButton(
-                        text="🌺 ᴄᴏᴍᴍᴀɴᴅꜱ 🌷",
+                        text="ꃅᴏᴡ ᴛᴏ ᴜꜱᴇ ❖",
                         callback_data="open_command_list",
                     )
                 ],
