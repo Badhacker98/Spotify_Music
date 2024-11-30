@@ -51,7 +51,7 @@ packages(){
 			pprint "SUCCESS.\n\n" "cgreen"
 		else
 			pprint "FAIL.\n\n" "cred"
-			pprint "You need to install ffmpeg manually in order to deploy Spotify_Music, exiting...\n" "cblue"
+			pprint "You need to install ffmpeg manually in order to deploy YukkiMusic, exiting...\n" "cblue"
 			exit 1
 		fi
 	fi
@@ -82,7 +82,7 @@ installation(){
 }
 
 clear
-pprint "Welcome to Spotify_Music Setup Installer\n\n"
+pprint "Welcome to YukkiMusic Setup Installer\n\n"
 pprint "If you see any error during Installation Process, Please refer to these files for logs: "
 pprint "\nFor node js errors , Checkout nodelog.txt"
 pprint "\nFor pypi packages errors , Checkout pypilog.txt"
@@ -103,8 +103,9 @@ pprint "API ID: "; color_reset; read api_id
 pprint "\nAPI HASH: "; color_reset; read api_hash
 pprint "\nBOT TOKEN: "; color_reset; read bot_token
 pprint "\nOWNER ID:"; color_reset; read ownid
-pprint "\nMONGO DB URI: "; color_reset; read mongo_db
+pprint "\nMONGO DB URL: "; color_reset; read mongo_db
 pprint "\nLOG GROUP ID: "; color_reset; read logger
+pprint "\nSTART IMAGE URL: "; color_reset; read start_image_url
 pprint "\nSTRING SESSION: "; color_reset; read string_session
 
 pprint "\n\nProcessing your vars, wait a while !" "cgreen"
@@ -116,11 +117,12 @@ fi
 echo """API_ID = $api_id
 API_HASH = $api_hash
 BOT_TOKEN = $bot_token
-MONGO_DB_URI = $mongo_db
-LOGGER_ID = $logger
+MONGO_DB_URL = $mongo_db
+LOG_GROUP_ID = $logger
+START_IMAGE_URL =$start_image_url
 STRING_SESSION = $string_session
 OWNER_ID = $ownid""" > .env
 clear
 
-pprint "\n\n\nThanks for using Spotify_Music installer, your vars have been saved successfully ! \nIf you wanna add more variables add them in your env by : vi .env"
+pprint "\n\n\nThanks for using YukkiMusic installer, your vars have been saved successfully ! \nIf you wanna add more variables add them in your env by : vi .env"
 pprint "\n\nNow you can start the bot by : bash start\n\n"
