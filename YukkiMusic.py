@@ -450,7 +450,7 @@ async def start_message_private(client, message):
 
 @bot.on_callback_query(rgx("open_command_list"))
 async def open_command_list_alert(client, query):
-    caption = """🥀 ᴀʟʟ ᴍᴇᴍʙᴇʀꜱ ᴄᴀɴ ᴜꜱᴇ:
+    caption = """💫 ᴀʟʟ ᴍᴇᴍʙᴇʀꜱ ᴄᴀɴ ᴜꜱ ❤️
 /play - Stream Only Audio On VC.
 /vplay - Stream Audio With Video.
 
