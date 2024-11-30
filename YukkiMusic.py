@@ -333,16 +333,6 @@ async def add_served_user(user_id: int):
 
 
 
-
-
-
-
-
-
-
-
-
-
 # Callback & Message Queries
 
 
@@ -451,14 +441,14 @@ async def start_message_private(client, message):
 @bot.on_callback_query(rgx("open_command_list"))
 async def open_command_list_alert(client, query):
     caption = """💫 ᴀʟʟ ᴍᴇᴍʙᴇʀꜱ ᴄᴀɴ ᴜꜱ ❤️
-/play - Stream Only Audio On VC.
-/vplay - Stream Audio With Video.
+/play ♢ ꜱᴛʀᴇᴀᴍ ᴏɴʟʏ ᴀᴜᴅɪᴏ ᴏɴ ᴠᴄ.
+/vplay ♢ ꜱᴛʀᴇᴀᴍ ᴀᴜᴅɪᴏ ᴡɪᴛʜ ᴠɪᴅᴇᴏ.
 
 👾 ᴏɴʟʏ ꜰᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴꜱ:
-/pause - Pause Running Stream.
-/resume - Resume Paused Stream.
-/skip - Skip Current Stream To Next.
-/end - Stop Current Running Stream.
+/pause ♢ ᴘᴀᴜꜱᴇ ʀᴜɴɴɪɴɢ ꜱᴛʀᴇᴀᴍ.
+/resume ♢ ʀᴇꜱᴜᴍᴇ ᴘᴀᴜꜱᴇᴅ ꜱᴛʀᴇᴀᴍ.
+/skip ♢ ꜱᴋɪᴘ ᴄᴜʀʀᴇɴᴛ ꜱᴛʀᴇᴀᴍ ᴛᴏ ɴᴇxᴛ.
+/end ♢ ꜱᴛᴏᴘ ᴄᴜʀʀᴇɴᴛ ʀᴜɴɴɪɴɢ ꜱᴛʀᴇᴀᴍ.
 
 ɴᴏᴛᴇ: ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅꜱ ᴡɪʟʟ ᴡᴏʀᴋ
 ᴏɴʟʏ ɪɴ ᴄʜᴀɴɴᴇʟꜱ/ɢʀᴏᴜᴘꜱ."""
