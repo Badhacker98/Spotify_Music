@@ -452,7 +452,7 @@ async def open_command_list_alert(client, query):
 /play ♢ ꜱᴛʀᴇᴀᴍ ᴏɴʟʏ ᴀᴜᴅɪᴏ ᴏɴ ᴠᴄ.
 /vplay ♢ ꜱᴛʀᴇᴀᴍ ᴀᴜᴅɪᴏ ᴡɪᴛʜ ᴠɪᴅᴇᴏ.
 
-👾 ᴏɴʟʏ ꜰᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴꜱ:
+🎉 ᴏɴʟʏ ꜰᴏʀ ᴄʜᴀᴛ ᴀᴅᴍɪɴꜱ:
 /pause ♢ ᴘᴀᴜꜱᴇ ʀᴜɴɴɪɴɢ ꜱᴛʀᴇᴀᴍ.
 /resume ♢ ʀᴇꜱᴜᴍᴇ ᴘᴀᴜꜱᴇᴅ ꜱᴛʀᴇᴀᴍ.
 /skip ♢ ꜱᴋɪᴘ ᴄᴜʀʀᴇɴᴛ ꜱᴛʀᴇᴀᴍ ᴛᴏ ɴᴇxᴛ.
@@ -792,24 +792,27 @@ async def stream_logger(
             except Exception:
                 requested_by = user.title
             if position:
-                caption = f""" ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ ᴀᴛ
-                 `#{position}`
+                caption = f"""**✅ 𝐀ᴅᴅᴇᴅ 𝐓ᴏ 𝐐ᴜᴇᴜᴇ 𝐀ᴛ :** `#{position}`
 
-🥀 ᴛɪᴛʟᴇ {title}
-🐬 ᴅᴜʀᴀᴛɪᴏɴ {duration}
-🦋 ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ {stream_type}
-🌺 ᴄʜᴀᴛ ɴᴀᴍᴇ {chat_name}
-🌼 ᴄʜᴀᴛ ʟɪɴᴋ {chat_link}
-👾 ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ {requested_by}"""
+**❍ Tɪᴛʟᴇ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
+**❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/HEROKUBIN_01)**"""
             else:
-                caption = f""" ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴠᴄ
+                caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
-🥀 ᴛɪᴛʟᴇ {title}
-🐬 ᴅᴜʀᴀᴛɪᴏɴ {duration}
-🦋 ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ {stream_type}
-🌺 ᴄʜᴀᴛ ɴᴀᴍᴇ {chat_name}
-🌼 ᴄʜᴀᴛ ʟɪɴᴋ {chat_link}
-👾 ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ {requested_by}"""
+**❍ Tɪᴛʟᴇ** {title}
+**❍ Dᴜʀᴀᴛɪᴏɴ :** {duration}
+**❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
+**❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
+**❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
             try:
                 await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption)
             except Exception:
