@@ -26,7 +26,30 @@
 <p>
 <a href="https://github.com/Badhacker98/YukkiMusic"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-greenviolet?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 ---
+# HOST ON VPS 
 
+1.ᴀᴛ ꜰɪʀꜱᴛ ᴄᴏᴘʏ & ᴘᴀꜱᴛᴇ ʙᴇʟᴏᴡ ᴄᴏᴍᴍᴀɴᴅ.
+```
+sudo apt install curl ffmpeg git nano python3-pip screen -y && git clone https://github.com/Badhacker98/YukkiMusic && cd YukkiMusic && pip3 install -r requirements.txt --force-reinstall && screen -R YukkiMusic
+```
+2.ɴᴏᴡ ʀᴜɴ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ & ᴀᴅᴅ ʏᴏᴜʀ ᴠᴀʀɪᴀʙʟᴇꜱ.
+```
+nano Config.env
+```
+3.ᴀꜰᴛᴇʀ ᴛʜᴀᴛ ꜱᴀᴠᴇ ᴀɴᴅ ᴇxɪᴛ ʙʏ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴꜱ.
+```
+ctrl + sctrl + x
+```
+4.ɴᴏᴡ ʀᴜɴ ʏᴏᴜʀ ʙᴏᴛ ɪɴ ʙᴀᴄᴋɢʀᴏᴜɴᴅ
+```
+python3 -m YukkiMusic
+```
+
+5.ɴᴏᴡ ᴇxɪᴛ ꜰʀᴏᴍ ꜱᴄʀᴇᴇɴ & ᴄʟᴏꜱᴇ ʏᴏᴜʀ ᴠᴘꜱ & ᴇɴᴊᴏʏ
+```
+ctrl + a+d
+```
+---
 
 
 
