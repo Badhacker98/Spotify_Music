@@ -1454,7 +1454,7 @@ async def update_repo_latest(client, message):
     for checks in repo.iter_commits(f"HEAD..origin/Bad"):
         verification = str(checks.count())
     if verification == "":
-        return await response.edit("Bot is up-to-date!")
+        return await response.edit("ʙᴏᴛ ɪꜱ ᴜᴘ-ᴛᴏ-ᴅᴀᴛᴇ!")
     updates = ""
     ordinal = lambda format: "%d%s" % (
         format,
