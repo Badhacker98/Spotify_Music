@@ -863,12 +863,14 @@ async def change_stream(chat_id):
 
     await call.play(chat_id, stream_media, config=call_config)
     await add_active_media_chat(chat_id, stream_type)
-    caption = f""" ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴠᴄ
+    caption = f"""ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴠᴄ.
 
-🥀 ᴛɪᴛʟᴇ {title}
-🐬 ᴅᴜʀᴀᴛɪᴏɴ {duration}
-🦋 ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ {stream_type}
-👾 ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ {requested_by}"""
+❍ Tɪᴛʟᴇ ➥  {title}
+❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
+❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -1068,12 +1070,14 @@ async def stream_audio_or_video(client, message):
                 position = await add_to_queue(
                     chat_id, user, title, duration, stream_file, stream_type, thumbnail
                 )
-                caption = f"""ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ ᴀᴛ `#{position}`
+                caption = f"""ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ ᴀᴛ : `#{position}`
 
-🥀 ᴛɪᴛʟᴇ {title}
-🐬 ᴅᴜʀᴀᴛɪᴏɴ {duration}
-🦋 ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ {stream_type}
-👾 ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ {requested_by}"""
+❍ Tɪᴛʟᴇ ➥  {title}
+❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
+❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
+
+❍ 𝖩ᴏɪɴ ➛ [sᴜᴘᴘᴏꝛᴛ](https://t.me/HEROKUBIN_01)"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1176,12 +1180,14 @@ async def stream_audio_or_video(client, message):
                 position = await add_to_queue(
                     chat_id, user, title, duration, stream_file, stream_type, thumbnail
                 )
-                caption = f""" ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴠᴄ
+                caption = f"""ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ ᴏɴ ᴠᴄ.
 
-**🥀 ᴛɪᴛʟᴇ** {title}
-**🐬 ᴅᴜʀᴀᴛɪᴏɴ** {duration}
-**🦋 ꜱᴛʀᴇᴀᴍ ᴛʏᴘᴇ** {stream_type}
-**👾 ʀᴇQᴜᴇꜱᴛᴇᴅ ʙʏ:** {requested_by}"""
+❍ Tɪᴛʟᴇ ➥  {title}
+❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
+❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
+
+❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
@@ -1343,16 +1349,6 @@ async def stream_end_handler(_, update: Update):
     chat_id = update.chat_id
     return await change_stream(chat_id)
 
-
-@bot.on_message(cdx("ping") & ~pyrofl.bot)
-async def check_sping(client, message):
-    start = datetime.now()
-    end = datetime.now()
-    ms = (end - start).microseconds / 1000
-    m = await message.reply_text("📍 ᴘɪɴɢ ᴘᴏɴɢ ᴘɪɴɢ 📌...!!")
-    await m.edit(f"📌 ᴘɪɴɢᴇᴅ...!!\nʟᴀᴛᴇɴᴄʏ: `{ms}` ms")
-
-
 @bot.on_message(cdx(["repo", "repository"]) & ~pyrofl.bot)
 async def git_repo_link(client, message):
     if message.sender_chat:
@@ -1363,18 +1359,15 @@ async def git_repo_link(client, message):
         caption = f"""➻ ʜᴇʟʟᴏ, {mention}
     
 🥀 ɪ ᴀᴍ ᴀɴ ≽ ᴀᴅᴠᴀɴᴄᴇᴅ ≽ ʜɪɢʜ Qᴜᴀʟɪᴛʏ
-ʙᴏᴛ, ɪ ᴄᴀɴ ꜱᴛʀᴇᴀᴍ 🌿 ᴀᴜᴅɪᴏ & ᴠɪᴅᴇᴏ ɪɴ
-ʏᴏᴜʀ ♚ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ɢʀᴏᴜᴘ.
-
-🐬 ꜰᴇᴇʟ ꜰʀᴇᴇ ≽ ᴛᴏ ᴜꜱᴇ ᴍᴇ › ᴀɴᴅ ꜱʜᴀʀᴇ
-ᴡɪᴛʜ ʏᴏᴜʀ ☛ ᴏᴛʜᴇʀ ꜰʀɪᴇɴᴅꜱ."""
+ʙᴏᴛ, ɪ ᴄᴀɴ ꜱᴛʀᴇᴀᴍ  ᴀᴜᴅɪᴏ & ᴠɪᴅᴇᴏ ɪɴ
+ʏᴏᴜʀ ♚ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ɢʀᴏᴜᴘ."""
     else:
         caption = f"**➻ ʜᴇʟʟᴏ, {mention}."
     buttons = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="🌺 ʀᴇᴘᴏꜱɪᴛᴏʀʏ 🦋",
+                    text="💫 ʀᴇᴘᴏꜱɪᴛᴏʀʏ ❤️",
                     url="https://github.com/Badhacker98/YukkiMusic/fork",
                 )
             ],
@@ -1393,52 +1386,6 @@ async def git_repo_link(client, message):
     except Exception as e:
         LOGGER.info(f"🚫 Error: {e}")
         return
-
-
-@bot.on_message(cdx("update") & bot_owner_only)
-async def update_repo_latest(client, message):
-    response = await message.reply_text("ᴄʜᴇᴄᴋɪɴɢ ꜰᴏʀ ᴀᴠᴀɪʟᴀʙʟᴇ ᴜᴘᴅᴀᴛᴇꜱ...")
-    try:
-        repo = Repo()
-    except GitCommandError:
-        return await response.edit("ɢɪᴛ ᴄᴏᴍᴍᴀɴᴅ ᴇʀʀᴏʀ")
-    except InvalidGitRepositoryError:
-        return await response.edit("ɪɴᴠᴀʟɪᴅ ɢɪᴛ ʀᴇᴘꜱɪᴛᴏʀʏ")
-    to_exc = f"git fetch origin Bad &> /dev/null"
-    os.system(to_exc)
-    await asyncio.sleep(7)
-    verification = ""
-    REPO_ = repo.remotes.origin.url.split(".git")[0]  # main git repository
-    for checks in repo.iter_commits(f"HEAD..origin/Bad"):
-        verification = str(checks.count())
-    if verification == "":
-        return await response.edit("Bot is up-to-date!")
-    updates = ""
-    ordinal = lambda format: "%d%s" % (
-        format,
-        "tsnrhtdd"[(format // 10 % 10 != 1) * (format % 10 < 4) * format % 10 :: 4],
-    )
-    for info in repo.iter_commits(f"HEAD..origin/Bad"):
-        updates += f"<b>➣ #{info.count()}: [{info.summary}]({REPO_}/commit/{info}) by -> {info.author}</b>\n\t\t\t\t<b>➥ Commited on:</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "<b>ᴀ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ ᴛʜᴇ ʙᴏᴛ!</b>\n\n➣ ᴘᴜꜱʜɪɴɢ ᴜᴘᴅᴀᴛᴇꜱ ɴᴏᴡ</code>\n\n<u>ᴜᴘᴅᴀᴛᴇꜱ</u>\n\n"
-    _final_updates_ = _update_response_ + updates
-    if len(_final_updates_) > 4096:
-        link = await paste_queue(updates)
-        url = link + "/index.txt"
-        nrs = await response.edit(
-            f"<b>ᴀ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ ᴛʜᴇ ʙᴏᴛ!</b>\n\n➣ ᴘᴜꜱʜɪɴɢ ᴜᴘᴅᴀᴛᴇꜱ ɴᴏᴡ</code>\n\n<u>ᴜᴘᴅᴀᴛᴇꜱ</u>\n\n[ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴄʜᴇᴄᴋᴏᴜᴛ ᴜᴘᴅᴀᴛᴇꜱ]({url})"
-        )
-    else:
-        nrs = await response.edit(_final_updates_, disable_web_page_preview=True)
-    os.system("git stash &> /dev/null && git pull")
-    await response.edit(
-        f"{nrs.text}\n\nʙᴏᴛ ᴡᴀꜱ ᴜᴘᴅᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ! ɴᴏᴡ, ᴡᴀɪᴛ ꜰᴏʀ 1 - 2 ᴍɪɴꜱ ᴜɴᴛɪʟ ᴛʜᴇ ʙᴏᴛ ʀᴇʙᴏᴏᴛꜱ!"
-    )
-    os.system("pip3 install -r requirements.txt --force-reinstall")
-    os.system(f"kill -9 {os.getpid()} && python3 -m YukkiMusic")
-    sys.exit()
-    return
-
 
 @bot.on_message(cdx(["stats"]) & ~pyrofl.private)
 async def check_bot_stats(client, message):
