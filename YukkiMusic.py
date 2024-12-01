@@ -799,9 +799,7 @@ async def stream_logger(
 **❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
 **❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
 **❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
-**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
-
-❍ 𝖩ᴏɪɴ ➛ **[sᴜᴘᴘᴏꝛᴛ](https://t.me/HEROKUBIN_01)**"""
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
             else:
                 caption = f"""**✅ 𝐒ᴛᴀʀᴛᴇᴅ 𝐒ᴛʀᴇᴀᴍɪɴɢ 𝐎ɴ 𝐕ᴄ.**
 
@@ -810,9 +808,7 @@ async def stream_logger(
 **❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ:** {stream_type}
 **❍ Cʜᴀᴛ Nᴀᴍᴇ:** {chat_name}
 **❍ Cʜᴀᴛ Lɪɴᴋ:** {chat_link}
-**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}
-
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
+**❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ:** {requested_by}"""
             try:
                 await bot.send_photo(LOG_GROUP_ID, photo=thumbnail, caption=caption)
             except Exception:
@@ -871,9 +867,7 @@ async def change_stream(chat_id):
 ❍ Tɪᴛʟᴇ ➥  {title}
 ❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
 ❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
-❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
-
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}"""
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -1070,9 +1064,7 @@ async def stream_audio_or_video(client, message):
 ❍ Tɪᴛʟᴇ ➥  {title}
 ❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
 ❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
-❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
-
-❍ 𝖩ᴏɪɴ ➛ [sᴜᴘᴘᴏꝛᴛ](https://t.me/HEROKUBIN_01)"""
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail, position
@@ -1180,9 +1172,7 @@ async def stream_audio_or_video(client, message):
 ❍ Tɪᴛʟᴇ ➥  {title}
 ❍ Dᴜʀᴀᴛɪᴏɴ ➥  {duration}
 ❍ Sᴛʀᴇᴀᴍ Tʏᴘᴇ ➥  {stream_type}
-❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}
-
-❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛ @YukkiiMusic_Bot"""
+❍ Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ ➥  {requested_by}"""
                 await bot.send_photo(chat_id, thumbnail, caption, reply_markup=buttons)
                 await stream_logger(
                     chat_id, user, title, duration, stream_type, thumbnail
