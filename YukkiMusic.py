@@ -931,18 +931,10 @@ async def stream_audio_or_video(client, message):
     video = (replied.video or replied.document) if replied else None
     stickers = [
         "🌹",
-        "🌺",
-        "🎉",
-        "🎃",
-        "💥",
         "🦋",
         "🕊️",
         "❤️",
-        "💖",
-        "💝",
         "💗",
-        "💓",
-        "💘",
         "💞",
     ]
     aux = await message.reply_text(random.choice(stickers))
@@ -1285,18 +1277,12 @@ async def skip_and_change_stream(client, message):
         elif call_status == "PLAYING" or call_status == "PAUSED":
             stickers = [
                 "🌹",
-                "🌺",
-                "🎉",
-                "🎃",
-                "💥",
                 "🦋",
                 "🕊️",
                 "❤️",
                 "💖",
-                "💝",
                 "💗",
                 "💓",
-                "💘",
                 "💞",
             ]
             aux = await message.reply_text(random.choice(stickers))
@@ -1451,6 +1437,49 @@ async def check_total_stats(client, query):
         LOGGER.info(f"🚫 Stats Error: {e}")
         pass
 
+@bot.on_message(cdx("gitpull") & bot_owner_only)
+async def update_repo_latest(client, message):
+    response = await message.reply_text("ᴄʜᴇᴄᴋɪɴɢ ꜰᴏʀ ᴀᴠᴀɪʟᴀʙʟᴇ ᴜᴘᴅᴀᴛᴇꜱ..")
+    try:
+        repo = Repo()
+    except GitCommandError:
+        return await response.edit("ɢɪᴛ ᴄᴏᴍᴍᴀɴᴅ ᴇʀʀᴏʀ")
+    except InvalidGitRepositoryError:
+        return await response.edit("ɪɴᴠᴀʟɪᴅ ɢɪᴛ ʀᴇᴘꜱɪᴛᴏʀʏ")
+    to_exc = f"git fetch origin YukkiMusic &> /dev/null"
+    os.system(to_exc)
+    await asyncio.sleep(7)
+    verification = ""
+    REPO_ = repo.remotes.origin.url.split(".git")[0]  # main git repository
+    for checks in repo.iter_commits(f"HEAD..origin/Bad"):
+        verification = str(checks.count())
+    if verification == "":
+        return await response.edit("Bot is up-to-date!")
+    updates = ""
+    ordinal = lambda format: "%d%s" % (
+        format,
+        "tsnrhtdd"[(format // 10 % 10 != 1) * (format % 10 < 4) * format % 10 :: 4],
+    )
+    for info in repo.iter_commits(f"HEAD..origin/YukkiMusic"):
+        updates += f"<b>➣ #{info.count()}: [{info.summary}]({REPO_}/commit/{info}) by -> {info.author}</b>\n\t\t\t\t<b>➥ Commited on:</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
+    _update_response_ = "<b>ᴀ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ ᴛʜᴇ ʙᴏᴛ!</b>\n\n➣ ᴘᴜꜱʜɪɴɢ ᴜᴘᴅᴀᴛᴇꜱ ɴᴏᴡ</code>\n\n**<u>ᴜᴘᴅᴀᴛᴇꜱ:</u>**\n\n"
+    _final_updates_ = _update_response_ + updates
+    if len(_final_updates_) > 4096:
+        link = await paste_queue(updates)
+        url = link + "/index.txt"
+        nrs = await response.edit(
+            f"<b>ᴀ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ꜰᴏʀ ᴛʜᴇ ʙᴏᴛ!</b>\n\n➣ ᴘᴜꜱʜɪɴɢ ᴜᴘᴅᴀᴛᴇꜱ ɴᴏᴡ</code>\n\n**<u>ᴜᴘᴅᴀᴛᴇꜱ:</u>**\n\n[Click Here to checkout ᴜᴘᴅᴀᴛᴇꜱ]({url})"
+        )
+    else:
+        nrs = await response.edit(_final_updates_, disable_web_page_preview=True)
+    os.system("git stash &> /dev/null && git pull")
+    await response.edit(
+        f"{nrs.text}\n\nʙᴏᴛ ᴡᴀꜱ ᴜᴘᴅᴀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ! ɴᴏᴡ, ᴡᴀɪᴛ ꜰᴏʀ 1 - 2 ᴍɪɴꜱ ᴜɴᴛɪʟ ᴛʜᴇ ʙᴏᴛ ʀᴇʙᴏᴏᴛꜱ!"
+    )
+    os.system("pip3 install -r requirements.txt --force-reinstall")
+    os.system(f"kill -9 {os.getpid()} && python3 -m YukkiMusic")
+    sys.exit()
+    return
 
 @bot.on_message(cdx(["broadcast", "gcast"]) & bot_owner_only)
 async def broadcast_message(client, message):
