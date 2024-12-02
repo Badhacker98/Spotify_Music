@@ -12,4 +12,4 @@ python-dotenv==1.0.1
 tgcrypto==1.2.5
 youtube-search-python
 yt-dlp==2024.11.18
-git+https://github.com/PyrogramMod/PyrogramMod.git
+git+https://github.com/KurimuzonAkuma/pyrogram
